@@ -1,0 +1,143 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: linear-gradient(45deg, #1054ad, #0b366f);
+    color: #fff;
+    font-family: 'Montserrat', Helvetica, sans-serif;
+    height: 100vh;
+    min-height: 900px;
+    text-align: center;
+}
+
+.container {
+    display: grid;
+    grid-template: 100px 500px 100px 150px / repeat(12, auto);
+    padding: 0 100px;
+    position: relative;
+}
+
+.title-bloc {
+    grid-area: 1 / 1 / 2 / -1;
+    line-height: 100px;
+}
+
+.infos-bloc {
+    align-items: center;
+    /* border: 1px solid #fff; */
+    display: flex;
+    grid-area: 2 / 3 / 3 / 11;
+    justify-content: center;
+}
+
+.svg {
+    height: 300px;
+    width: 30%;
+}
+
+.svg img {
+    height: 100%;
+    width: auto;
+}
+
+.infos {
+    width: 30%;
+}
+
+.infos .weather {
+    font-size: 2.5em;
+}
+
+.infos .weather::first-letter {
+    text-transform: capitalize;
+}
+
+.infos .temperature {
+    font-size: 6em;
+}
+
+.infos .localization {
+    font-size: 3.5em;
+    word-wrap: break-word;
+}
+
+.hourly-forecast-container {
+    grid-area: 3 / 3 / 4 / 11;
+}
+
+.daily-forecast-container {
+    grid-area: 4 / 3 / 5 / 11;
+}
+
+.hourly-forecast-container,
+.daily-forecast-container {
+    display: grid;
+}
+
+.hourly-forecast-container {
+    border-bottom: 1px solid #fff;
+    grid-template: 100px / repeat(10, 1fr);
+}
+
+.daily-forecast-container {
+    grid-template: 150px / repeat(3, 1fr);
+}
+
+.hour-bloc,
+.day-bloc {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    font-size: 2em;
+    justify-content: center;
+}
+
+.hour-bloc:not(:last-child),
+.day-bloc:not(:last-child) {
+    border-right: 1px solid #fff;
+}
+
+.hour-bloc p,
+.day-bloc p {
+    margin: 5px;
+}
+
+.hour-bloc .name-hour,
+.day-bloc .name-day {
+    font-size: 0.7em;
+}
+
+.hour-bloc .temperature-hour {
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+.day-bloc .name-day {
+    font-size: 1em;
+}
+
+.day-bloc .weather-day {
+    font-size: 0.6em;
+}
+
+.day-bloc .temperature-day span.max-temp {
+    opacity: 0.5;
+}
+
+@media (max-width: 2000px) {
+    .infos-bloc {
+        align-items: center;
+        display: flex;
+        grid-area: 2 / 1 / 3 / -1;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 1400px) {
+    .infos-bloc div {
+        width: 50%;
+    }
+}
