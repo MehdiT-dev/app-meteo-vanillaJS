@@ -57,7 +57,7 @@ function appelAPI(lat, lon) {
         }
 
         for (let k=0; k<days.length; k++) {
-            days[k].innerText = sortedWeekDays[k];
+            days[k].innerText = sortedWeekDays[k+1];
         }
 
         console.log(weatherDays);
